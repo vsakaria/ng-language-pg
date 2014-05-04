@@ -2,10 +2,10 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', [function() {
+var languageSnapControllers = angular.module('languageSnapControllers', []);
 
-  }])
-  .controller('MyCtrl2', [function() {
-
-  }]);
+languageSnapControllers.controller('EnglishPharse', function($scope, $http) {
+    $http.get('data/words.json').success(function(data) {
+        $scope.words = data;
+    });
+});
