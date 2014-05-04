@@ -2,6 +2,6 @@
 
 
 // Declare app level module which depends on filters, and services
-var languageSnap = angular.module('langageSnap', [
-    'languageSnapControllers',
+var languageSnap = angular.module('languageSnap', [
+    'languageSnapControllers'
 ]);

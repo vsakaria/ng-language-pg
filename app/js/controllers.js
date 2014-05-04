@@ -2,10 +2,14 @@
 
 /* Controllers */
 
+
+
 var languageSnapControllers = angular.module('languageSnapControllers', []);
 
-languageSnapControllers.controller('EnglishPharse', function($scope, $http) {
-    $http.get('data/words.json').success(function(data) {
-        $scope.words = data;
+languageSnapControllers.controller('EnglishPharse', function($scope, enWord) {
+    console.log('Started Controller');
+    enWord.getWords().then(function(words) {
+        $scope.words = words;
     });
+    console.log('End Controller');
 });
