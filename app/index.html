@@ -9,6 +9,11 @@
   <h1>Learn Spanish the fun way!</h1>
 
   <div ng-controller="EnglishPharse">
+    <h1>Random Word</h1>
+    <h2>{{ getRandomPharse() }}</h2>
+
+    <div>--------------------</div>
+
     <ul>
       <li ng-repeat='word in words track by $index'>
         <p>{{ word.es }} </p>

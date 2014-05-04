@@ -1,21 +1,18 @@
 'use strict';
 /* Services */
-languageSnap.service('enWord', function($http) {
-    console.log('Started Services')
+languageSnap.service('Word', function($http) {
+
+    var words = {}
 
     this.getWords = function() {
-        console.log('Started HTTP')
         return $http.get('data/words.json')
             .then(function(result) {
-                console.log('Completed HTTP')
-
-                return result.data
+                words = result.data;
+                return words;
             });
     };
 
-
-
     this.getRandWord = function() {
-        return "Hello I am a Service!"
+        return (words[Math.floor((Math.random() * 11))]);
     };
 })

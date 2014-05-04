@@ -6,10 +6,13 @@
 
 var languageSnapControllers = angular.module('languageSnapControllers', []);
 
-languageSnapControllers.controller('EnglishPharse', function($scope, enWord) {
-    console.log('Started Controller');
-    enWord.getWords().then(function(words) {
+languageSnapControllers.controller('EnglishPharse', function($scope, Word) {
+
+    Word.getWords().then(function(words) {
         $scope.words = words;
     });
-    console.log('End Controller');
+
+    $scope.getRandomPharse = function() {
+        return ($scope.words[Math.floor((Math.random() * 11))]).en;
+    };
 });
